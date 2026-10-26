@@ -1,0 +1,66 @@
+{
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+  "payload": [
+    {
+      "versionHash": "",
+      "state": "finalized",
+      "parents": [],
+      "createdAt": "2026-10-26T16:00:00Z",
+      "modifiedAt": "2026-10-26T16:00:00Z",
+      "proof": [],
+      "representations": [
+        {
+          "format": "application/json",
+          "content": {
+            "rwpSchemaVersion": "0.1",
+            "schemaId": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+            "displayName": "RecordWeb Root Schema (SchemaRecord)",
+            "allowedStates": ["draft", "finalized"],
+            "stateTransitions": [
+              { "from": "draft", "to": "finalized", "requiresOwnerSignature": true }
+            ],
+            "signaturePolicy": "owner",
+            "payloadFormats": {
+              "draft": ["application/json"],
+              "finalized": ["application/json"]
+            },
+            "capabilities": ["retrieve", "validate"],
+            "jsonSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "required": ["rwpSchemaVersion", "schemaId", "allowedStates", "payloadFormats", "jsonSchema"],
+              "properties": {
+                "rwpSchemaVersion": { "type": "string" },
+                "schemaId": { "type": "string", "pattern": "^did:rwp:" },
+                "displayName": { "type": "string" },
+                "allowedStates": { "type": "array", "items": { "type": "string" } },
+                "stateTransitions": { "type": "array" },
+                "signaturePolicy": { "type": "string", "enum": ["owner", "system", "none"] },
+                "payloadFormats": { "type": "object" },
+                "capabilities": { "type": "array", "items": { "type": "string" } },
+                "previousSchemaVersion": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+                "jsonSchema": { "type": "object" }
+              }
+            }
+          },
+          "contentHash": "",
+          "primary": true,
+          "role": "source"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+      "schemaVersion": "",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "RecordWebTrustAssociation",
+      "classification": "public"
+    },
+    "extensions": []
+  },
+  "recordHash": ""
+}
