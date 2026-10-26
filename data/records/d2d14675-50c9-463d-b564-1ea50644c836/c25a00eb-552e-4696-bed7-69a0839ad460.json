@@ -7,7 +7,16 @@
       "parents": [],
       "createdAt": "2026-10-26T18:10:00Z",
       "modifiedAt": "2026-10-26T18:10:00Z",
-      "proof": [],
+      "proof": [
+        {
+          "type": "DataIntegrityProof",
+          "cryptosuite": "eddsa-jcs-2022",
+          "created": "2026-10-26T18:10:00Z",
+          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z2weEsT7nNfhtYsJ8maPjKwqtdMkAZ3cnWkHN3AeR7PSnj5g31FMbPo2YeMtRFLxe1HQKZQSaJsWU4VqAwQfaFnJW"
+        }
+      ],
       "representations": [
         {
           "format": "application/json",
@@ -96,5 +105,5 @@
     },
     "extensions": []
   },
-  "recordHash": "sha256:ac128c3c73b32d40e889ab27d8d09c98dfd91da048545c8863777df7a633f3a4"
+  "recordHash": "sha256:549c81d87f0ece9e7d514be70bbbdb2ef61724f142f0cf7408d1cd3920181303"
 }

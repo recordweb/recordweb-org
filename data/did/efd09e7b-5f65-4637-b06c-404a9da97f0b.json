@@ -14,7 +14,7 @@
       "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
-      "publicKeyMultibase": "<z6Mk...>"
+      "publicKeyMultibase": "z6MkpgYzzH9AJJTnsYYMEaaVPZN2t2iCsz76ShftvkBt5jpP"
     }
   ]
 }
