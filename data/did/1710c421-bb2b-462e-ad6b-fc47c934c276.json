@@ -8,12 +8,12 @@
   "created": "2026-10-26T16:00:00Z",
   "updated": "2026-10-26T16:00:00Z",
   "currentVersion": "<versionHash aus dem Record>",
-  "controller": "RecordWebTrustAssociation",
+  "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
   "verificationMethod": [
     {
       "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276#key-1",
       "type": "Ed25519VerificationKey2020",
-      "controller": "RecordWebTrustAssociation",
+      "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
       "publicKeyMultibase": "<z6Mk…>"
     }
   ]

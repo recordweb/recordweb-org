@@ -57,7 +57,7 @@
       "transit": "internal"
     },
     "governance": {
-      "owner": "RecordWebTrustAssociation",
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
       "classification": "public"
     },
     "extensions": []
