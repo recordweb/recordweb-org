@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1"
+  ],
+  "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+  "recordEndpoint": "https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/efd09e7b-5f65-4637-b06c-404a9da97f0b",
+  "created": "2026-10-26T18:20:00Z",
+  "updated": "2026-10-26T18:20:00Z",
+  "currentVersion": "sha256:474425f9f1f2d1fe78bcec3f41a579c02d5261161c489ab22296980075f37895",
+  "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+  "verificationMethod": [
+    {
+      "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "publicKeyMultibase": "<z6Mk...>"
+    }
+  ]
+}

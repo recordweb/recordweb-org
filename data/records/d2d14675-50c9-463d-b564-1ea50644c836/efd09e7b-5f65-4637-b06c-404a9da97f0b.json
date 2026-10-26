@@ -1,0 +1,41 @@
+{
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+  "payload": [
+    {
+      "versionHash": "sha256:474425f9f1f2d1fe78bcec3f41a579c02d5261161c489ab22296980075f37895",
+      "state": "finalized",
+      "parents": [],
+      "createdAt": "2026-10-26T18:20:00Z",
+      "modifiedAt": "2026-10-26T18:20:00Z",
+      "proof": [],
+      "representations": [
+        {
+          "format": "application/json",
+          "content": {
+            "agentType": "organization",
+            "name": "Record Web Trust Association",
+            "identifiers": [
+              "https://recordweb.org"
+            ]
+          },
+          "primary": true,
+          "role": "source",
+          "contentHash": "sha256:a25ef2bf5914439e828582be3f517d212e12b82412182fe0cf80850885e18973"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:c25a00eb-552e-4696-bed7-69a0839ad460",
+      "schemaVersion": "sha256:dfc5fe190508dbb8360a96acf3505518c09b8c48f43b5b2d8522470f3e1482d8",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "classification": "public"
+    },
+    "extensions": []
+  },
+  "recordHash": "sha256:f6f094dafb3693dc9b1728e5e47bba4a297026e56c13c41da2c2ff47fd2da6b9"
+}
