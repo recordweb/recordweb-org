@@ -53,7 +53,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
-      "schemaVersion": "415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
+      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
       "transit": "internal"
     },
     "governance": {
