@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Root Schema Record · RecordWeb</title>
+  <style>body{font-family:sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem}
+  pre{background:#f4f4f4;padding:1rem;overflow:auto}</style>
+</head>
+<body>
+  <h1>Root Schema Record</h1>
+  <p id="status">Loading…</p>
+  <h2>DID</h2><p><code id="did"></code></p>
+  <h2>DID Document</h2><pre id="doc"></pre>
+  <h2>Record</h2><pre id="rec"></pre>
+<script>
+const DID = "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276";
+const $ = (id) => document.getElementById(id);
+(async () => {
+  $("did").textContent = DID;
+  try {
+    const dr = await fetch("/resolver/did/" + DID);
+    const doc = await dr.json();
+    $("doc").textContent = JSON.stringify(doc, null, 2);
+    if (!dr.ok || !doc.recordEndpoint) { $("status").textContent = "DID document: HTTP " + dr.status; return; }
+    const rr = await fetch(doc.recordEndpoint);
+    $("rec").textContent = JSON.stringify(await rr.json(), null, 2);
+    $("status").textContent = "Record: HTTP " + rr.status;
+  } catch (e) { $("status").textContent = "Error: " + e.message; }
+})();
+</script>
+</body>
+</html>

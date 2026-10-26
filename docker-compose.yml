@@ -1,0 +1,20 @@
+name: recordweb-org
+
+services:
+  recordweb-org:
+    build: .
+    container_name: recordweb-org
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data:ro
+    networks:
+      - tws-proxy
+      - poc_network
+
+networks:
+  tws-proxy:
+    external: true
+    name: tws-proxy
+  poc_network:
+    external: true
+    name: poc-fragestunde_poc_network
