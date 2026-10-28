@@ -1,0 +1,38 @@
+{
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:a95437ee-25e4-469a-a2e1-c2b250b21e15",
+  "payload": [
+    {
+      "versionHash": "sha256:a86a4b1e25a3b436522a5047e8bf6c485ca502dfeff65fe7a5783228d16fb3e2",
+      "state": "finalized",
+      "parents": [],
+      "createdAt": "2026-10-28T10:29:00Z",
+      "modifiedAt": "2026-10-28T10:29:00Z",
+      "proof": [],
+      "representations": [
+        {
+          "format": "application/json",
+          "content": {
+            "title": "Hello RecordWeb",
+            "description": "First instance of the SampleRecord type."
+          },
+          "contentHash": "sha256:30b186a5c492b14e2432419905b5343882eb9fc94940fd9e04cfcf7fd4fd058c",
+          "primary": true,
+          "role": "source"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
+      "schemaVersion": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "classification": "public"
+    },
+    "extensions": []
+  },
+  "recordHash": "sha256:44b983488a1eabd1b8bd16bc235ceabc76e86de0c323e22003a52950550a5293"
+}
