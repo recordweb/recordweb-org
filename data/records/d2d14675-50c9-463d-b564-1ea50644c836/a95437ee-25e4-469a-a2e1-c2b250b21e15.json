@@ -12,9 +12,9 @@
           "type": "DataIntegrityProof",
           "cryptosuite": "eddsa-jcs-2022",
           "created": "2026-10-28T10:29:00Z",
-          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:a95437ee-25e4-469a-a2e1-c2b250b21e15.json#key-1",
+          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
           "proofPurpose": "assertionMethod",
-          "proofValue": "z3v7EagxvUNimw8qojvmTUGW79ehtiKvUWqiBghdeeU3KZHjQQ9Wu5NuU4W9kjZCKgABNaXGYnGwMR3bJjzgcozqi"
+          "proofValue": "zfLVYZBoebLUnYAHvno1KNdAQztgotFQV9AW1CKNEb2ueqH8xor3PXt971utE9WQyyXcZsEEA3q3VmL5sUi3MSNU"
         }
       ],
       "representations": [
@@ -43,5 +43,5 @@
     },
     "extensions": []
   },
-  "recordHash": "sha256:9df154c406336466f6e3ace129d529b7ae9e4bf6ccc36d0133c7cf0a9340a160"
+  "recordHash": "sha256:57715def0857e907168e5c74240e6e6d2e8679a66f8da7f1d2e7f09e1cf93b06"
 }
