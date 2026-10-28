@@ -7,7 +7,16 @@
       "parents": [],
       "createdAt": "2026-10-28T09:00:00Z",
       "modifiedAt": "2026-10-28T09:00:00Z",
-      "proof": [],
+      "proof": [
+        {
+          "type": "DataIntegrityProof",
+          "cryptosuite": "eddsa-jcs-2022",
+          "created": "2026-10-28T09:00:00Z",
+          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z49pizqFAyb3fWep2FRLWgoXdrdfh1kTPsQXxZNR61wAhZbEnTYBkvCS9KBZtEgpmkwM8FMkCtzmyBjYR3GTmfSyY"
+        }
+      ],
       "representations": [
         {
           "format": "application/json",
@@ -15,24 +24,44 @@
             "rwpSchemaVersion": "0.1",
             "schemaId": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
             "displayName": "RecordWeb Sample (SampleRecord)",
-            "allowedStates": ["draft", "finalized"],
+            "allowedStates": [
+              "draft",
+              "finalized"
+            ],
             "stateTransitions": [
-              { "from": "draft", "to": "finalized", "requiresOwnerSignature": true }
+              {
+                "from": "draft",
+                "to": "finalized",
+                "requiresOwnerSignature": true
+              }
             ],
             "signaturePolicy": "owner",
             "payloadFormats": {
-              "draft": ["application/json"],
-              "finalized": ["application/json"]
+              "draft": [
+                "application/json"
+              ],
+              "finalized": [
+                "application/json"
+              ]
             },
-            "capabilities": ["retrieve"],
+            "capabilities": [
+              "retrieve"
+            ],
             "jsonSchema": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "type": "object",
-              "required": ["title"],
+              "required": [
+                "title"
+              ],
               "additionalProperties": false,
               "properties": {
-                "title": { "type": "string", "minLength": 1 },
-                "description": { "type": "string" }
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "description": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -55,5 +84,5 @@
     },
     "extensions": []
   },
-  "recordHash": "sha256:f5dd36b666bcac7452f16d0fb77f8dc6ede9bc998ef7c125ca41a269856c2843"
+  "recordHash": "sha256:01ff63a9de0efc096c7884c12fcfae7bc1817565f82247126a8e30e20574d662"
 }
