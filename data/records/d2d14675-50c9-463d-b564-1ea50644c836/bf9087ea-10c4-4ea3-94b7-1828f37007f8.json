@@ -2,7 +2,7 @@
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
   "payload": [
     {
-      "versionHash": "",
+      "versionHash": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-10-28T09:00:00Z",
@@ -36,7 +36,7 @@
               }
             }
           },
-          "contentHash": "",
+          "contentHash": "sha256:ce7fe35585911185edb268a09968157d5ae562b5afb7ac94576653bd4cb78fc3",
           "primary": true,
           "role": "source"
         }
@@ -46,7 +46,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
-      "schemaVersion": "",
+      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
       "transit": "internal"
     },
     "governance": {
@@ -55,5 +55,5 @@
     },
     "extensions": []
   },
-  "recordHash": ""
+  "recordHash": "sha256:f5dd36b666bcac7452f16d0fb77f8dc6ede9bc998ef7c125ca41a269856c2843"
 }
