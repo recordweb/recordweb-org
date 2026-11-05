@@ -5,8 +5,8 @@
       "versionHash": "sha256:dfc5fe190508dbb8360a96acf3505518c09b8c48f43b5b2d8522470f3e1482d8",
       "state": "finalized",
       "parents": [],
-      "createdAt": "2026-10-26T18:10:00Z",
-      "modifiedAt": "2026-10-26T18:10:00Z",
+      "createdAt": "2026-11-05T00:00:00Z",
+      "modifiedAt": "2026-11-05T00:00:00Z",
       "proof": [
         {
           "type": "DataIntegrityProof",
@@ -21,9 +21,8 @@
         {
           "format": "application/json",
           "content": {
-            "rwpSchemaVersion": "0.1",
-            "schemaId": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:c25a00eb-552e-4696-bed7-69a0839ad460",
-            "displayName": "RecordWeb Agent (AgentRecord)",
+            "rwpSchemaVersion": "1.0",
+            "displayName": "RecordWeb Root Schema (AgentRecord)",
             "allowedStates": [
               "draft",
               "finalized"
@@ -44,9 +43,6 @@
                 "application/json"
               ]
             },
-            "capabilities": [
-              "retrieve"
-            ],
             "jsonSchema": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "type": "object",
@@ -54,7 +50,6 @@
                 "agentType",
                 "name"
               ],
-              "additionalProperties": false,
               "properties": {
                 "agentType": {
                   "type": "string",
@@ -67,14 +62,6 @@
                 "name": {
                   "type": "string",
                   "minLength": 1
-                },
-                "actedOnBehalfOf": {
-                  "type": "array",
-                  "uniqueItems": true,
-                  "items": {
-                    "type": "string",
-                    "pattern": "^did:rwp:"
-                  }
                 },
                 "identifiers": {
                   "type": "array",

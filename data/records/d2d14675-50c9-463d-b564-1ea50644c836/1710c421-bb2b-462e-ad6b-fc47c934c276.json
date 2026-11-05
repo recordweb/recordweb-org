@@ -5,8 +5,8 @@
       "versionHash": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
       "state": "finalized",
       "parents": [],
-      "createdAt": "2026-10-26T16:00:00Z",
-      "modifiedAt": "2026-10-26T16:00:00Z",
+      "createdAt": "2026-11-05T00:00:00Z",
+      "modifiedAt": "2026-11-05T00:00:00Z",
       "proof": [
         {
           "type": "DataIntegrityProof",
@@ -21,39 +21,22 @@
         {
           "format": "application/json",
           "content": {
-            "rwpSchemaVersion": "0.1",
-            "schemaId": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+            "rwpSchemaVersion": "1.0",
             "displayName": "RecordWeb Root Schema (SchemaRecord)",
             "allowedStates": [
-              "draft",
               "finalized"
-            ],
-            "stateTransitions": [
-              {
-                "from": "draft",
-                "to": "finalized",
-                "requiresOwnerSignature": true
-              }
             ],
             "signaturePolicy": "owner",
             "payloadFormats": {
-              "draft": [
-                "application/json"
-              ],
               "finalized": [
                 "application/json"
               ]
             },
-            "capabilities": [
-              "retrieve",
-              "validate"
-            ],
             "jsonSchema": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "type": "object",
               "required": [
                 "rwpSchemaVersion",
-                "schemaId",
                 "allowedStates",
                 "payloadFormats",
                 "jsonSchema"
@@ -62,12 +45,12 @@
                 "rwpSchemaVersion": {
                   "type": "string"
                 },
-                "schemaId": {
-                  "type": "string",
-                  "pattern": "^did:rwp:"
-                },
                 "displayName": {
                   "type": "string"
+                },
+                "subClassOf": {
+                  "type": "string",
+                  "pattern": "^did:rwp:[^:]+:[^:]+:[0-9a-f]{64}$"
                 },
                 "allowedStates": {
                   "type": "array",
@@ -94,10 +77,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "previousSchemaVersion": {
-                  "type": "string",
-                  "pattern": "^sha256:[0-9a-f]{64}$"
                 },
                 "jsonSchema": {
                   "type": "object"

@@ -1,0 +1,93 @@
+{
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:73bb7ec9-2f67-4acb-af9f-ec9d1f7dde60",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+      "schemaVersion": "sha256:<versionHash of Root SchemaRecord v2>",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "classification": "public"
+    },
+    "extensions": []
+  },
+  "payload": [
+    {
+      "versionHash": "sha256:66674bd7bd00fd8204cc16a3058a617e50ba8a9808c6affe304c5cfb898307c1",
+      "state": "finalized",
+      "parents": [],
+      "createdAt": "2026-11-05T00:00:00Z",
+      "modifiedAt": "2026-11-05T00:00:00Z",
+      "representations": [
+        {
+          "format": "application/json",
+          "content": {
+            "rwpSchemaVersion": "1.0",
+            "displayName": "RecordWeb Root Schema (AssertionRecord)",
+            "allowedStates": [
+              "draft",
+              "finalized"
+            ],
+            "stateTransitions": [
+              {
+                "from": "draft",
+                "to": "finalized",
+                "requiresOwnerSignature": true
+              }
+            ],
+            "signaturePolicy": "owner",
+            "payloadFormats": {
+              "draft": [
+                "application/json"
+              ],
+              "finalized": [
+                "application/json"
+              ]
+            },
+            "jsonSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "required": [
+                "subject",
+                "predicate",
+                "object",
+                "assertedBy",
+                "assertedAt"
+              ],
+              "properties": {
+                "subject": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:.+$"
+                },
+                "predicate": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:.+$"
+                },
+                "object": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:.+$"
+                },
+                "assertedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "assertedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "effectiveAt": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "primary": true,
+          "role": "source",
+          "contentHash": "sha256:1d710b282fbe8503423c9f84e513f4f714f42e70898f8847519d31c586da5003"
+        }
+      ]
+    }
+  ]
+}

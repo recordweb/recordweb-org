@@ -5,8 +5,8 @@
   ],
   "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
   "recordEndpoint": "https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/efd09e7b-5f65-4637-b06c-404a9da97f0b",
-  "created": "2026-10-26T18:20:00Z",
-  "updated": "2026-10-26T18:20:00Z",
+  "created": "2026-11-05T00:00:00Z",
+  "updated": "2026-11-05T00:00:00Z",
   "currentVersion": "sha256:474425f9f1f2d1fe78bcec3f41a579c02d5261161c489ab22296980075f37895",
   "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
   "verificationMethod": [
