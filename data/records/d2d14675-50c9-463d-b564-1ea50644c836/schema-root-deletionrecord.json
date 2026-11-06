@@ -1,0 +1,119 @@
+{
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-deletionrecord",
+  "payload": [
+    {
+      "versionHash": "sha256:abd5ba10cbf737fc24f3ca272acad6b44862fccde31074ee88a60e3b35f12bb8",
+      "state": "finalized",
+      "parents": [],
+      "createdAt": "2026-11-05T00:00:00Z",
+      "modifiedAt": "2026-11-05T00:00:00Z",
+      "representations": [
+        {
+          "format": "application/json",
+          "content": {
+            "rwpSchemaVersion": "1.0",
+            "displayName": "RecordWeb Root Schema (DeletionRecord)",
+            "allowedStates": [
+              "finalized"
+            ],
+            "signaturePolicy": "owner",
+            "payloadFormats": {
+              "finalized": [
+                "application/json"
+              ]
+            },
+            "jsonSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "required": [
+                "targetDid",
+                "deletionRegime",
+                "legalBasis",
+                "approvedBy",
+                "deletedAt"
+              ],
+              "properties": {
+                "targetDid": {
+                  "type": "string",
+                  "pattern": "^did:rwp:"
+                },
+                "targetVersions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^sha256:[0-9a-f]{64}$"
+                  }
+                },
+                "deletionRegime": {
+                  "type": "string",
+                  "enum": [
+                    "payload-only",
+                    "full-delete"
+                  ]
+                },
+                "legalBasis": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "requestedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "approvedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "deletedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "retainedFields": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "if": {
+                "properties": {
+                  "deletionRegime": {
+                    "const": "full-delete"
+                  }
+                },
+                "required": [
+                  "deletionRegime"
+                ]
+              },
+              "then": {
+                "not": {
+                  "required": [
+                    "targetVersions"
+                  ]
+                }
+              }
+            }
+          },
+          "primary": true,
+          "role": "source",
+          "contentHash": "sha256:7e5fbf3f68987efd6dd46e66926117fd557368d30b121559a5ad99663413c043"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
+  "recordHash": "sha256:527613ae66857d8f75ad6d9a070a4f97443b71e87571d2ef080629614367cb50"
+}

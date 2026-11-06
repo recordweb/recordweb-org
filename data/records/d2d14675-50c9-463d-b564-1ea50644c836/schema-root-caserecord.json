@@ -1,5 +1,5 @@
 {
-  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:dbcf9c35-64cb-45b4-ba5f-d23d9a672f01",
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-caserecord",
   "payload": [
     {
       "versionHash": "sha256:6dbf15dd5ec10f682758a7a4e533da43d59a6cc94536849a4a858af1821cdd92",
@@ -87,12 +87,12 @@
   ],
   "metadata": {
     "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
       "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
       "transit": "internal"
     },
     "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
       "classification": "public"
     },
     "extensions": []

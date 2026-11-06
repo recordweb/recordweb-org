@@ -1,5 +1,5 @@
 {
-  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+  "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
   "payload": [
     {
       "versionHash": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
@@ -12,7 +12,7 @@
           "type": "DataIntegrityProof",
           "cryptosuite": "eddsa-jcs-2022",
           "created": "2026-10-26T16:00:00Z",
-          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1",
+          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association#key-1",
           "proofPurpose": "assertionMethod",
           "proofValue": "z65ZVfNj1pSGcJFaDXgsVfXfNW1i1Yh2s9K8pAfQLZ9nXxpc5qRMG94dQkd7h1wL51q4EhdoenXjPfFtDRU2cicYY"
         }
@@ -93,12 +93,12 @@
   ],
   "metadata": {
     "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:1710c421-bb2b-462e-ad6b-fc47c934c276",
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
       "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
       "transit": "internal"
     },
     "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
       "classification": "public"
     },
     "extensions": []
