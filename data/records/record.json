@@ -1,0 +1,531 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://recordweb.org/schemas/rwp/1.0/record.json",
+  "title": "RWP Record",
+  "description": "Structural validation of the Record, Version, Metadata and DID document structures. Hash, proof and state requirements are defined in the RWP specification.",
+  "type": "object",
+  "required": [
+    "did",
+    "payload",
+    "metadata",
+    "recordHash"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "did": {
+      "type": "string",
+      "pattern": "^did:rwp:[^:]+:[^:]+$"
+    },
+    "payload": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/version"
+      }
+    },
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "recordHash": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "didRwp": {
+      "type": "string",
+      "pattern": "^did:rwp:"
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "object",
+      "required": [
+        "versionHash",
+        "state",
+        "parents",
+        "createdAt",
+        "modifiedAt",
+        "representations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "versionHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "state": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "parents": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/sha256"
+          }
+        },
+        "createdAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "modifiedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "proof": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/proof",
+            "properties": {
+              "proofPurpose": {
+                "const": "assertionMethod"
+              }
+            }
+          }
+        },
+        "issuance": {
+          "$ref": "#/$defs/issuance"
+        },
+        "representations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/representation"
+          }
+        }
+      },
+      "if": {
+        "required": [
+          "issuance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "representations": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "required": [
+                "content",
+                "contentHash"
+              ],
+              "properties": {
+                "primary": {
+                  "const": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "representation": {
+      "type": "object",
+      "required": [
+        "format",
+        "primary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {},
+        "contentHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deleted": {
+          "$ref": "#/$defs/didRwp"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "source",
+            "publication",
+            "preview",
+            "archive"
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "content",
+            "contentHash"
+          ],
+          "properties": {
+            "ref": false,
+            "deleted": false
+          }
+        },
+        {
+          "required": [
+            "ref"
+          ],
+          "properties": {
+            "content": false,
+            "contentHash": false,
+            "deleted": false
+          }
+        },
+        {
+          "required": [
+            "deleted"
+          ],
+          "properties": {
+            "content": false,
+            "contentHash": false,
+            "ref": false
+          }
+        }
+      ]
+    },
+    "proof": {
+      "type": "object",
+      "required": [
+        "type",
+        "cryptosuite",
+        "created",
+        "verificationMethod",
+        "proofPurpose",
+        "proofValue"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "DataIntegrityProof"
+        },
+        "cryptosuite": {
+          "const": "eddsa-jcs-2022"
+        },
+        "created": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "verificationMethod": {
+          "type": "string",
+          "pattern": "^did:rwp:[^:#]+:[^:#]+#.+$"
+        },
+        "proofPurpose": {
+          "type": "string",
+          "enum": [
+            "assertionMethod",
+            "capabilityInvocation"
+          ]
+        },
+        "proofValue": {
+          "type": "string",
+          "pattern": "^z[1-9A-HJ-NP-Za-km-z]+$"
+        }
+      }
+    },
+    "issuance": {
+      "type": "object",
+      "required": [
+        "issuedAt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "issuedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "issuedTo": {
+          "type": "string"
+        },
+        "validUntil": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "core"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "core": {
+          "type": "object",
+          "required": [
+            "recordType",
+            "schemaVersion",
+            "transit"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "recordType": {
+              "$ref": "#/$defs/didRwp"
+            },
+            "schemaVersion": {
+              "$ref": "#/$defs/sha256"
+            },
+            "transit": {
+              "type": "string",
+              "enum": [
+                "incoming",
+                "internal",
+                "outgoing"
+              ]
+            },
+            "provenanceRef": {
+              "$ref": "#/$defs/provenanceRef"
+            }
+          },
+          "if": {
+            "properties": {
+              "transit": {
+                "const": "incoming"
+              }
+            },
+            "required": [
+              "transit"
+            ]
+          },
+          "then": {
+            "required": [
+              "provenanceRef"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "provenanceRef"
+              ]
+            }
+          }
+        },
+        "governance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "owner": {
+              "$ref": "#/$defs/didRwp"
+            },
+            "classification": {
+              "type": "string"
+            },
+            "retentionPolicy": {
+              "$ref": "#/$defs/didRwp"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deletionRegime": {
+              "type": "string",
+              "enum": [
+                "payload-only",
+                "full-delete",
+                "exempt"
+              ]
+            }
+          }
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "$ref": "#/$defs/didRwp"
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenanceRef": {
+      "type": "object",
+      "required": [
+        "sourceDescription",
+        "capturedAt",
+        "capturedBy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sourceDescription": {
+          "type": "string"
+        },
+        "capturedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "capturedBy": {
+          "type": "string"
+        },
+        "sourceSystem": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "sourceObjectType": {
+          "type": "string"
+        },
+        "sourceIntegrity": {
+          "type": "string"
+        }
+      }
+    },
+    "didDocument": {
+      "description": "One version of a DID document. Referenced as record.json#/$defs/didDocument.",
+      "type": "object",
+      "required": [
+        "@context",
+        "id",
+        "recordEndpoint",
+        "created",
+        "updated"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "anyOf": [
+            {
+              "const": "https://www.w3.org/ns/did/v1"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "prefixItems": [
+                {
+                  "const": "https://www.w3.org/ns/did/v1"
+                }
+              ],
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^did:rwp:[^:]+:[^:]+$"
+        },
+        "controller": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/didRwp"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/didRwp"
+              }
+            }
+          ]
+        },
+        "recordEndpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "created": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "updated": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "currentVersionHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "previousVersionHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "verificationMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/verificationMethod"
+          }
+        },
+        "assertionMethod": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capabilityInvocation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "service": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "serviceEndpoint"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "serviceEndpoint": {}
+            }
+          }
+        },
+        "proof": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/proof",
+            "properties": {
+              "proofPurpose": {
+                "const": "capabilityInvocation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "verificationMethod": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "controller",
+        "publicKeyMultibase"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^did:rwp:[^:#]+:[^:#]+#.+$"
+        },
+        "type": {
+          "const": "Multikey"
+        },
+        "controller": {
+          "$ref": "#/$defs/didRwp"
+        },
+        "publicKeyMultibase": {
+          "type": "string",
+          "pattern": "^z6Mk[1-9A-HJ-NP-Za-km-z]+$"
+        }
+      }
+    }
+  }
+}
