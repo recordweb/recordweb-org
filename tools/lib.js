@@ -19,8 +19,9 @@ const sha = (v) => "sha256:" +
   crypto.createHash("sha256").update(jcs(v).normalize("NFC"), "utf8").digest("hex");
 const pick = (o, keys) =>
   Object.fromEntries(keys.filter((k) => k in o).map((k) => [k, o[k]]));
+const recordHash = (rec) => sha(pick(rec, ["did", "metadata", "payload"]));
 function publicMultibase(publicKey) {
   const raw = Buffer.from(publicKey.export({ format: "jwk" }).x, "base64url");
   return "z" + b58(Buffer.concat([Buffer.from([0xed, 0x01]), raw]));
 }
-module.exports = { b58, jcs, sha, pick, publicMultibase };
+module.exports = { b58, jcs, sha, pick, recordHash, publicMultibase };

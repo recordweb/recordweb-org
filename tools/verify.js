@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { jcs, sha, pick } = require("./lib");
+const { jcs, sha, pick, recordHash } = require("./lib");
 
 const ROOT = path.resolve(process.argv[2] || "data");
 const BASE = "https://recordweb.org/resolver";
@@ -97,7 +97,7 @@ function checkRecord({ rel, ns, id, rec }) {
     for (const proof of ver.proof || []) checkProof(at, ver, proof);
   });
 
-  const rh = sha(pick(rec, ["did", "payload", "metadata"]));
+  const rh = recordHash(rec);
   if (rec.recordHash !== rh) err(rel, `recordHash is ${rec.recordHash}, calculated ${rh}`);
 
   const core = (rec.metadata || {}).core || {};

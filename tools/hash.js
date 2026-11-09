@@ -1,7 +1,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { sha, pick } = require("./lib");
+const { sha, pick, recordHash } = require("./lib");
 
 const file = process.argv[2];
 if (!file) { console.error("Usage: node hash.js <record.json>"); process.exit(1); }
@@ -30,7 +30,7 @@ if (core.recordType === rec.did) {
   }
 }
 
-rec.recordHash = sha(pick(rec, ["did", "payload", "metadata"]));
+rec.recordHash = recordHash(rec);
 fs.writeFileSync(file, JSON.stringify(rec, null, 2) + "\n");
 console.log("contentHash:  ", ver.representations[0].contentHash);
 console.log("versionHash:  ", ver.versionHash);

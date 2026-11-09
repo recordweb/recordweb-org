@@ -1,7 +1,7 @@
 "use strict";
 const fs = require("fs");
 const crypto = require("crypto");
-const { b58, jcs, sha, pick, publicMultibase } = require("./lib");
+const { b58, jcs, sha, pick, recordHash, publicMultibase } = require("./lib");
 
 const [recordFile, keyFile, verificationMethod] = process.argv.slice(2);
 if (!recordFile || !keyFile || !verificationMethod) {
@@ -40,7 +40,7 @@ const signature = crypto.sign(null, hashData, privateKey);
 if (!crypto.verify(null, hashData, publicKey, signature)) { console.error("Self-check failed."); process.exit(1); }
 
 ver.proof = [{ ...proofConfig, proofValue: "z" + b58(signature) }];
-rec.recordHash = sha(pick(rec, ["did", "payload", "metadata"]));
+rec.recordHash = recordHash(rec);
 
 fs.writeFileSync(recordFile, JSON.stringify(rec, null, 2) + "\n");
 console.log("publicKeyMultibase:", publicMultibase(publicKey));
