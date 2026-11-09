@@ -53,11 +53,13 @@ Check: `type rwnode` prints the function. If it says `not found`, the function i
 
 `rwnode` must be called from the repository root, because it mounts the current directory.
 
-Before every session, update the clone:
+Before every session, reset the clone:
 
 ```bash
 cd ~/work/recordweb-org
-git pull
+git fetch --all
+git reset --hard origin/main
+git clean -fd
 ```
 
 If you cannot use Git on the VPS (no user or token for GitHub), copy the files by hand instead (see step 8).
@@ -169,7 +171,9 @@ Note the printed `versionHash`. You need it in the next step. If a line says `WA
     "[https://w3id.org/security/suites/ed25519-2020/v1](https://w3id.org/security/suites/ed25519-2020/v1)"
   ],
   "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:<record-id>",
-  "recordEndpoint": "[https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/](https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/)<record-id>",
+  "recordEndpoint": [
+    "[https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/](https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/)<record-id>"
+  ],
   "created": "<createdAt>",
   "updated": "<createdAt>",
   "currentVersion": "sha256:<versionHash>",

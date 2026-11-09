@@ -2,7 +2,7 @@
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
   "payload": [
     {
-      "versionHash": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
+      "versionHash": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -84,7 +84,7 @@
               }
             }
           },
-          "contentHash": "sha256:0489f23079699507778be84d6631e36921bab28a6199426b575c6ba2351b53b8",
+          "contentHash": "sha256:c58209a3a4af076ab8f81c1353295be7bce07929253d925861557e6f42bf0203",
           "primary": true,
           "role": "source"
         }
@@ -103,5 +103,5 @@
     },
     "extensions": []
   },
-  "recordHash": "sha256:445450eda36011a303f673e080268499b07727109336fe5e0ff1aecb403cc147"
+  "recordHash": "sha256:eb5456c8a9933830edcb3ed0f7c416221a2ce8e9d551be2978a59c331442f85a"
 }
