@@ -94,7 +94,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
       "transit": "internal"
     },
     "governance": {
