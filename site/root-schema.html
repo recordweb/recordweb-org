@@ -21,10 +21,16 @@ const $ = (id) => document.getElementById(id);
     const dr = await fetch("/resolver/did/" + DID);
     const doc = await dr.json();
     $("doc").textContent = JSON.stringify(doc, null, 2);
-    if (!dr.ok || !doc.recordEndpoint) { $("status").textContent = "DID document: HTTP " + dr.status; return; }
-    const rr = await fetch(doc.recordEndpoint);
+    const eps = [].concat(doc.recordEndpoint || []);
+    if (!dr.ok || eps.length === 0) { $("status").textContent = "DID document: HTTP " + dr.status; return; }
+    let rr = null, used = null;
+    for (const ep of eps) {
+      try { const r = await fetch(ep); if (r.ok) { rr = r; used = ep; break; } }
+      catch (_) { /* nächsten Endpoint versuchen */ }
+    }
+    if (!rr) { $("status").textContent = "Record: no endpoint reachable"; return; }
     $("rec").textContent = JSON.stringify(await rr.json(), null, 2);
-    $("status").textContent = "Record: HTTP " + rr.status;
+    $("status").textContent = "Record: HTTP " + rr.status + " via " + used;
   } catch (e) { $("status").textContent = "Error: " + e.message; }
 })();
 </script>

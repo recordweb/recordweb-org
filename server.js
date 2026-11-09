@@ -6,6 +6,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3000;
 const DATA = path.join(__dirname, "data");
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const RECORD_ID = /^[a-z0-9][a-z0-9._-]*$/; // dieselbe Regel wie in verify.js
 
 const app = express();
 app.disable("x-powered-by");
@@ -27,7 +28,7 @@ app.get("/resolver/did/:did", (req, res) => {
     return res.status(400).json({ error: "invalid did:rwp" });
   }
   const [ns, id] = [parts[2], parts[3]];
-  if (!UUID.test(ns) || !UUID.test(id)) {
+  if (!UUID.test(ns) || !RECORD_ID.test(id)) {
     return res.status(404).json({ error: "unknown DID" });
   }
   sendJson(res, path.join(DATA, "did", `${id}.json`), "application/did+ld+json");
@@ -35,7 +36,7 @@ app.get("/resolver/did/:did", (req, res) => {
 
 app.get("/resolver/records/:ns/:id", (req, res) => {
   const { ns, id } = req.params;
-  if (!UUID.test(ns) || !UUID.test(id)) {
+  if (!UUID.test(ns) || !RECORD_ID.test(id)) {
     return res.status(404).json({ error: "unknown record" });
   }
   sendJson(res, path.join(DATA, "records", ns, `${id}.json`), "application/json");
