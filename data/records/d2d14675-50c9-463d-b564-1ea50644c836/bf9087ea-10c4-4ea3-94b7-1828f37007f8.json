@@ -23,7 +23,7 @@
         {
           "type": "DataIntegrityProof",
           "cryptosuite": "eddsa-jcs-2022",
-          "created": "2026-10-28T09:00:00Z",
+          "created": "2026-11-05T00:00:00Z",
           "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association#key-1",
           "proofPurpose": "assertionMethod",
           "proofValue": "z4QetwxYAexiJjC7rj9kYjNVSn8dnoRixtY1gFa16mLKTJvK3R5Vc5mTE7PJGdXXEzxD4Ng47Mw43VXSS1cCtakmG"
