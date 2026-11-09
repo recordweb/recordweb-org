@@ -26,7 +26,7 @@
           "created": "2026-10-28T09:00:00Z",
           "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association#key-1",
           "proofPurpose": "assertionMethod",
-          "proofValue": "z49pizqFAyb3fWep2FRLWgoXdrdfh1kTPsQXxZNR61wAhZbEnTYBkvCS9KBZtEgpmkwM8FMkCtzmyBjYR3GTmfSyY"
+          "proofValue": "z4QetwxYAexiJjC7rj9kYjNVSn8dnoRixtY1gFa16mLKTJvK3R5Vc5mTE7PJGdXXEzxD4Ng47Mw43VXSS1cCtakmG"
         }
       ],
       "representations": [
@@ -80,5 +80,5 @@
       ]
     }
   ],
-  "recordHash": "sha256:f36c676ee856948b83ce675b9cbc9541e1c2586000716a2ff25ffbb967226ee1"
+  "recordHash": "sha256:fd25a0f9d29c12bf0400942890a2ade5f77c223dbb1e565dc17baf21ae15adb1"
 }

@@ -19,6 +19,16 @@
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
       "modifiedAt": "2026-11-05T00:00:00Z",
+      "proof": [
+        {
+          "type": "DataIntegrityProof",
+          "cryptosuite": "eddsa-jcs-2022",
+          "created": "2026-10-26T18:10:00Z",
+          "verificationMethod": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association#key-1",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z4dtQsDxWMS5HYwogpftGpFn1PZHPHLqdWHrjScimifrNYGWFZHmGGpR8RD8NvigcfTq9WaY49B7cWToHjp887TNc"
+        }
+      ],
       "representations": [
         {
           "format": "application/json",
@@ -90,5 +100,5 @@
       ]
     }
   ],
-  "recordHash": "sha256:e1c37565ab6adc769bf0bb275e486f5ed871768bc646746022a0333384d3baeb"
+  "recordHash": "sha256:798e0f3792f0b8ba4c211a1d63300f3eb2de4d31dcdf520a21d5397bb2caed5b"
 }

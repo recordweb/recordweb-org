@@ -204,7 +204,7 @@ A missing proof is only a warning (`finalized without proof`). Errors at this po
 ```bash
 rwnode tools/sign.js data/records/d2d14675-50c9-463d-b564-1ea50644c836/<record-id>.json \
   /keys/rwta-ed25519-private.pem \
-  "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b#key-1"
+  "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association#key-1"
 ```
 
 Copy the command as it is, with the line breaks (`\`) at the end of the first two lines and a space before them. The output shows three lines: `publicKeyMultibase`, `proofValue` and `recordHash`. The `publicKeyMultibase` must be the RWTA key from section 2.
