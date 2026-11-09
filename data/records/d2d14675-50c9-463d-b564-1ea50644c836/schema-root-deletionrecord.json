@@ -1,8 +1,20 @@
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-deletionrecord",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
-      "versionHash": "sha256:abd5ba10cbf737fc24f3ca272acad6b44862fccde31074ee88a60e3b35f12bb8",
+      "versionHash": "sha256:ffb5e75db60bab56ce6c97befdaeaafe5e2c8c3f0acf6931e30b79ea6be09c73",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -98,22 +110,10 @@
           },
           "primary": true,
           "role": "source",
-          "contentHash": "sha256:7e5fbf3f68987efd6dd46e66926117fd557368d30b121559a5ad99663413c043"
+          "contentHash": "sha256:4dab65ed1cd5c72e72a8e2237af75055c8cd4afb7cdbb5d9f37f26d83b5aeb82"
         }
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
-      "classification": "public"
-    },
-    "extensions": []
-  },
-  "recordHash": "sha256:527613ae66857d8f75ad6d9a070a4f97443b71e87571d2ef080629614367cb50"
+  "recordHash": "sha256:952f5d797e141b31ae234f8ac4bb231cf59ab4abdd27a7a6e8ecfc0a05a703ae"
 }

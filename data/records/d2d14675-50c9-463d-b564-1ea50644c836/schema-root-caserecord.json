@@ -1,8 +1,20 @@
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-caserecord",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
-      "versionHash": "sha256:6dbf15dd5ec10f682758a7a4e533da43d59a6cc94536849a4a858af1821cdd92",
+      "versionHash": "sha256:3622a965594d5b9970f2e5c92c66f878ccfb5a972f61ac3b46ef41dbfa1116e9",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -80,22 +92,10 @@
           },
           "primary": true,
           "role": "source",
-          "contentHash": "sha256:a4806869d951ac54a2683f95425ec62defda8151268db26fd529ee8d10bf2518"
+          "contentHash": "sha256:99a57f8439f8bacee084e7a0742a835e37d140eae132cf953332d3697122264b"
         }
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
-      "classification": "public"
-    },
-    "extensions": []
-  },
-  "recordHash": "sha256:b217dab2b987a2d0413ac01639b1b378584077fb2c620e483774f085a4ced0be"
+  "recordHash": "sha256:753989f1b7fc812a68d2f14eefe8c44410e79e82104a02660cf7de0997c92ed9"
 }

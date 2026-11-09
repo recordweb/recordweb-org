@@ -3,7 +3,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:<versionHash of Root SchemaRecord v2>",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
       "transit": "internal"
     },
     "governance": {
@@ -14,7 +14,7 @@
   },
   "payload": [
     {
-      "versionHash": "sha256:66674bd7bd00fd8204cc16a3058a617e50ba8a9808c6affe304c5cfb898307c1",
+      "versionHash": "sha256:fe06970166343fd7ca1c7c948617c7f1869d2273727a66333aa459cd7a123ef4",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -85,9 +85,10 @@
           },
           "primary": true,
           "role": "source",
-          "contentHash": "sha256:1d710b282fbe8503423c9f84e513f4f714f42e70898f8847519d31c586da5003"
+          "contentHash": "sha256:ecc00aff6dfad90b0ffa78a96bced38b958bb422396e1d02977b9913d4ac5365"
         }
       ]
     }
-  ]
+  ],
+  "recordHash": "sha256:e1c37565ab6adc769bf0bb275e486f5ed871768bc646746022a0333384d3baeb"
 }

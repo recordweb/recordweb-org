@@ -1,5 +1,17 @@
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
       "versionHash": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
@@ -91,17 +103,5 @@
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
-      "classification": "public"
-    },
-    "extensions": []
-  },
   "recordHash": "sha256:eb5456c8a9933830edcb3ed0f7c416221a2ce8e9d551be2978a59c331442f85a"
 }

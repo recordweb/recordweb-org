@@ -37,7 +37,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-agentrecord",
-      "schemaVersion": "sha256:dfc5fe190508dbb8360a96acf3505518c09b8c48f43b5b2d8522470f3e1482d8",
+      "schemaVersion": "sha256:93692f566c244305f2c6ffccf3987a618281ad186247276b2b288c037ede9b2a",
       "transit": "internal"
     },
     "governance": {
