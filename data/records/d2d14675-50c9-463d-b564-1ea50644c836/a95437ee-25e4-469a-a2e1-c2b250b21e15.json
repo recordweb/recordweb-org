@@ -1,8 +1,20 @@
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:a95437ee-25e4-469a-a2e1-c2b250b21e15",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
+      "schemaVersion": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
-      "versionHash": "sha256:a86a4b1e25a3b436522a5047e8bf6c485ca502dfeff65fe7a5783228d16fb3e2",
+      "versionHash": "sha256:b35ddc0d728e0d6147e42a5ba224ac4952e0c84b3ecb76b0a00541afbb18395e",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -31,17 +43,5 @@
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
-      "schemaVersion": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
-      "classification": "public"
-    },
-    "extensions": []
-  },
-  "recordHash": "sha256:57715def0857e907168e5c74240e6e6d2e8679a66f8da7f1d2e7f09e1cf93b06"
+  "recordHash": "sha256:0baa76f4dce4a0536b7259a0bb4c2df6f607b78d17bce7a4f67d6b0da8357c86"
 }

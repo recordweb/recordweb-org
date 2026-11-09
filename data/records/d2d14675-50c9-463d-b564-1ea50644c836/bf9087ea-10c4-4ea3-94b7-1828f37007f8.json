@@ -1,8 +1,20 @@
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
+      "schemaVersion": "sha256:f6fa964c6b4ad09af2d1e2d3c8c30fbb2d812796eccd7e592f56dbd3b8299cd2",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
-      "versionHash": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
+      "versionHash": "sha256:cb6e6981125295c64ccc5e6440d4e8e81d9939649e930fb07eaa5ccbb2b30660",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -61,24 +73,12 @@
               }
             }
           },
-          "contentHash": "sha256:ce7fe35585911185edb268a09968157d5ae562b5afb7ac94576653bd4cb78fc3",
+          "contentHash": "sha256:2f9d3eadb5bc708f953e8c7eeb705b9ca90db800e2c6d6c8e00239e0e0b2e37c",
           "primary": true,
           "role": "source"
         }
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:schema-root-schemarecord",
-      "schemaVersion": "sha256:415f04c714d58c915ff0646c842f79b501d654fe6b586243977bc5550e8d7a77",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
-      "classification": "public"
-    },
-    "extensions": []
-  },
-  "recordHash": "sha256:01ff63a9de0efc096c7884c12fcfae7bc1817565f82247126a8e30e20574d662"
+  "recordHash": "sha256:f36c676ee856948b83ce675b9cbc9541e1c2586000716a2ff25ffbb967226ee1"
 }

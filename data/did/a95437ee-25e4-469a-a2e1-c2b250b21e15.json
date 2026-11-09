@@ -4,10 +4,12 @@
     "https://w3id.org/security/suites/ed25519-2020/v1"
   ],
   "id": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:a95437ee-25e4-469a-a2e1-c2b250b21e15",
-  "recordEndpoint": "https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/a95437ee-25e4-469a-a2e1-c2b250b21e15",
+  "recordEndpoint": [
+    "https://recordweb.org/resolver/records/d2d14675-50c9-463d-b564-1ea50644c836/a95437ee-25e4-469a-a2e1-c2b250b21e15"
+  ],
   "created": "2026-11-05T00:00:00Z",
   "updated": "2026-11-05T00:00:00Z",
-  "currentVersion": "sha256:a86a4b1e25a3b436522a5047e8bf6c485ca502dfeff65fe7a5783228d16fb3e2",
+  "currentVersion": "sha256:b35ddc0d728e0d6147e42a5ba224ac4952e0c84b3ecb76b0a00541afbb18395e",
   "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
   "verificationMethod": [
     {

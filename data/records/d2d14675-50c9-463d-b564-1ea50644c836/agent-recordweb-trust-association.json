@@ -2,7 +2,7 @@
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
   "payload": [
     {
-      "versionHash": "sha256:474425f9f1f2d1fe78bcec3f41a579c02d5261161c489ab22296980075f37895",
+      "versionHash": "sha256:c389769378c1622ef1d0d7d25c2dee595400bfef6839b5a0cf03af1ee88a2e45",
       "state": "finalized",
       "parents": [],
       "createdAt": "2026-11-05T00:00:00Z",
@@ -46,5 +46,5 @@
     },
     "extensions": []
   },
-  "recordHash": "sha256:e54546ec0f21b4302a0e128259c846d2369cd0bcd4eb7679d9f91a0e84e61ec7"
+  "recordHash": "sha256:0ac22820aad7d96a1a18074cd7e59fed3c37ef02ee7fcc692fc806cf30fb14ca"
 }

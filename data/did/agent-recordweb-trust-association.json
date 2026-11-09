@@ -9,7 +9,7 @@
   ],
   "created": "2026-11-05T00:00:00Z",
   "updated": "2026-11-05T00:00:00Z",
-  "currentVersion": "sha256:474425f9f1f2d1fe78bcec3f41a579c02d5261161c489ab22296980075f37895",
+  "currentVersion": "sha256:c389769378c1622ef1d0d7d25c2dee595400bfef6839b5a0cf03af1ee88a2e45",
   "controller": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:agent-recordweb-trust-association",
   "verificationMethod": [
     {
