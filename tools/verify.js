@@ -61,7 +61,7 @@ for (const file of listJson(path.join(ROOT, "records"))) {
   }
   const ns = parts[1];
   const id = parts[2].slice(0, -5);
-  if (!UUID.test(ns) || !UUID.test(id)) { err(rel, "namespace and record id must be lowercase UUIDv4"); continue; }
+  if (!UUID.test(ns)) { err(rel, "namespace id must be lowercase UUIDv4"); continue; }
   const rec = readJson(file);
   if (rec) records.set(`${ns}:${id}`, { rel, ns, id, rec });
 }

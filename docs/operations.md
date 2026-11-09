@@ -117,6 +117,18 @@ Example: a new Record of an existing Record type. Replace the placeholders in an
 ```json
 {
   "did": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:<record-id>",
+  "metadata": {
+    "core": {
+      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:<schema-record-id>",
+      "schemaVersion": "",
+      "transit": "internal"
+    },
+    "governance": {
+      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
+      "classification": "public"
+    },
+    "extensions": []
+  },
   "payload": [
     {
       "versionHash": "",
@@ -136,18 +148,6 @@ Example: a new Record of an existing Record type. Replace the placeholders in an
       ]
     }
   ],
-  "metadata": {
-    "core": {
-      "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:<schema-record-id>",
-      "schemaVersion": "",
-      "transit": "internal"
-    },
-    "governance": {
-      "owner": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:efd09e7b-5f65-4637-b06c-404a9da97f0b",
-      "classification": "public"
-    },
-    "extensions": []
-  },
   "recordHash": ""
 }
 ```
