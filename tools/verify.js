@@ -7,6 +7,7 @@ const { jcs, sha, pick } = require("./lib");
 const ROOT = path.resolve(process.argv[2] || "data");
 const BASE = "https://recordweb.org/resolver";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const RECORD_ID = /^[a-z0-9][a-z0-9._-]*$/;
 const HASH = /^sha256:[0-9a-f]{64}$/;
 const B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
@@ -62,17 +63,19 @@ for (const file of listJson(path.join(ROOT, "records"))) {
   const ns = parts[1];
   const id = parts[2].slice(0, -5);
   if (!UUID.test(ns)) { err(rel, "namespace id must be lowercase UUIDv4"); continue; }
+  if (!RECORD_ID.test(id)) { err(rel, "invalid record-id"); continue; }
   const rec = readJson(file);
   if (rec) records.set(`${ns}:${id}`, { rel, ns, id, rec });
 }
 for (const file of listJson(path.join(ROOT, "did"))) {
   const rel = path.relative(ROOT, file);
   const name = path.basename(file);
-  if (!name.endsWith(".json") || name.endsWith(".json.json") || !UUID.test(name.slice(0, -5))) {
+  const rid = name.slice(0, -5);
+  if (!name.endsWith(".json") || name.endsWith(".json.json") || !RECORD_ID.test(rid) && !UUID.test(rid)) {
     err(rel, "expected did/<record-id>.json"); continue;
   }
   const doc = readJson(file);
-  if (doc) didDocs.set(name.slice(0, -5), { rel, doc });
+  if (doc) didDocs.set(rid, { rel, doc });
 }
 
 function checkRecord({ rel, ns, id, rec }) {
@@ -114,7 +117,13 @@ function checkRecord({ rel, ns, id, rec }) {
   const doc = dd.doc;
   const last = rec.payload[rec.payload.length - 1];
   if (doc.id !== did) err(dd.rel, `id is ${doc.id}, expected ${did}`);
-  if (doc.recordEndpoint !== `${BASE}/records/${ns}/${id}`) err(dd.rel, "recordEndpoint does not match the record path");
+  const expectedEp = `${BASE}/records/${ns}/${id}`;
+  const ep = doc.recordEndpoint;
+  if (!Array.isArray(ep) || ep.length === 0 || !ep.every((x) => typeof x === "string")) {
+    err(dd.rel, "recordEndpoint must be a non-empty array of strings");
+  } else if (!ep.includes(expectedEp)) {
+    err(dd.rel, `recordEndpoint does not contain ${expectedEp}`);
+  }
   if (doc.currentVersion !== last.versionHash) err(dd.rel, "currentVersion differs from versionHash of the last version");
   for (const vm of doc.verificationMethod || []) {
     try { keyFromMultibase(vm.publicKeyMultibase); }
