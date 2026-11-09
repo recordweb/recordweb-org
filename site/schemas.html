@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schemas · RecordWeb</title>
+  <style>
+    body{font-family:sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem;color:#222}
+    h1{margin-bottom:.25rem}
+    h2{margin:2rem 0 .5rem;border-bottom:2px solid #ddd;padding-bottom:.25rem}
+    .lead{color:#555;margin-top:0}
+    details.rec{border:1px solid #ccc;border-radius:6px;margin:.5rem 0;background:#fff}
+    details.rec>summary{cursor:pointer;padding:.7rem 1rem;display:flex;gap:.75rem;align-items:center;list-style:none}
+    details.rec>summary::-webkit-details-marker{display:none}
+    details.rec>summary::before{content:"▸";transition:transform .15s}
+    details.rec[open]>summary::before{transform:rotate(90deg)}
+    details.rec[open]>summary{border-bottom:1px solid #ddd;background:#fafafa}
+    .title{font-weight:600}
+    .kind{font-size:.75rem;background:#e8eefc;color:#27428f;border-radius:999px;padding:.1rem .6rem}
+    .state{margin-left:auto;font-size:.8rem;color:#777}
+    .state.ok{color:#1a7f37}.state.err{color:#b42318}
+    .body{padding:1rem}
+    .body h3{margin:1rem 0 .25rem;font-size:.95rem;color:#444}
+    .body h3:first-child{margin-top:0}
+    pre{background:#f4f4f4;padding:1rem;overflow:auto;margin:.25rem 0;max-height:28rem}
+    code{word-break:break-all}
+    .bar{margin:.5rem 0}
+    button{font:inherit;padding:.25rem .7rem;margin-right:.4rem;cursor:pointer}
+  </style>
+</head>
+<body>
+  <h1>RecordWeb Schemas</h1>
+  <p class="lead">Records resolved live from the RecordWeb resolver.</p>
+  <div class="bar">
+    <button id="open-all">Expand all</button>
+    <button id="close-all">Collapse all</button>
+  </div>
+
+  <h2>A. RecordWeb Trust Association</h2>
+  <div id="sec-a"></div>
+
+  <h2>B. Root Schemas</h2>
+  <div id="sec-b"></div>
+
+<script>
+const NS = "d2d14675-50c9-463d-b564-1ea50644c836";
+const SECTIONS = {
+  "sec-a": [
+    { id: "agent-recordweb-trust-association", title: "RecordWeb Trust Association", kind: "AgentRecord" },
+    { id: "bf9087ea-10c4-4ea3-94b7-1828f37007f8", title: "Sample Schema", kind: "SchemaRecord" },
+    { id: "a95437ee-25e4-469a-a2e1-c2b250b21e15", title: "Sample Record", kind: "Record" }
+  ],
+  "sec-b": [
+    { id: "schema-root-schemarecord",    title: "Root SchemaRecord",    kind: "Root Schema" },
+    { id: "schema-root-agentrecord",     title: "Root AgentRecord",     kind: "Root Schema" },
+    { id: "schema-root-caserecord",      title: "Root CaseRecord",      kind: "Root Schema" },
+    { id: "schema-root-assertionrecord", title: "Root AssertionRecord", kind: "Root Schema" },
+    { id: "schema-root-deletionrecord",  title: "Root DeletionRecord",  kind: "Root Schema" }
+  ]
+};
+
+const el = (tag, cls, text) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+};
+
+function section(title, text) {
+  const wrap = document.createDocumentFragment();
+  wrap.append(el("h3", null, title));
+  return wrap;
+}
+
+function buildItem(item) {
+  const did = `did:rwp:${NS}:${item.id}`;
+  const d = el("details", "rec");
+  const sum = el("summary");
+  const state = el("span", "state", "not loaded");
+  sum.append(el("span", "title", item.title), el("span", "kind", item.kind), el("code", null, item.id), state);
+  const body = el("div", "body");
+  d.append(sum, body);
+
+  let loaded = false;
+  d.addEventListener("toggle", async () => {
+    if (!d.open || loaded) return;
+    loaded = true;
+    state.textContent = "loading…";
+    const preDoc = el("pre"), preRec = el("pre");
+    body.append(
+      el("h3", null, "DID"), Object.assign(el("code"), { textContent: did }),
+      el("h3", null, "DID Document"), preDoc,
+      el("h3", null, "Record"), preRec
+    );
+    try {
+      const dr = await fetch("/resolver/did/" + did);
+      const doc = await dr.json();
+      preDoc.textContent = JSON.stringify(doc, null, 2);
+      const eps = [].concat(doc.recordEndpoint || []);
+      if (!dr.ok || eps.length === 0) throw new Error("DID document: HTTP " + dr.status);
+      let rr = null, used = null;
+      for (const ep of eps) {
+        try { const r = await fetch(ep); if (r.ok) { rr = r; used = ep; break; } } catch (_) {}
+      }
+      if (!rr) throw new Error("no record endpoint reachable");
+      preRec.textContent = JSON.stringify(await rr.json(), null, 2);
+      state.textContent = "HTTP " + rr.status;
+      state.title = used;
+      state.classList.add("ok");
+    } catch (e) {
+      state.textContent = "Error: " + e.message;
+      state.classList.add("err");
+      loaded = false; // erneuter Versuch beim nächsten Aufklappen
+      body.replaceChildren();
+    }
+  });
+  return d;
+}
+
+for (const [secId, items] of Object.entries(SECTIONS)) {
+  document.getElementById(secId).append(...items.map(buildItem));
+}
+document.getElementById("open-all").onclick = () =>
+  document.querySelectorAll("details.rec").forEach((d) => (d.open = true));
+document.getElementById("close-all").onclick = () =>
+  document.querySelectorAll("details.rec").forEach((d) => (d.open = false));
+</script>
+</body>
+</html>
