@@ -3,7 +3,7 @@
   "metadata": {
     "core": {
       "recordType": "did:rwp:d2d14675-50c9-463d-b564-1ea50644c836:bf9087ea-10c4-4ea3-94b7-1828f37007f8",
-      "schemaVersion": "sha256:b9b5c6ca89de15838077dc5021775938f924fa88f04626bc7496a91d0eaf35fa",
+      "schemaVersion": "sha256:cb6e6981125295c64ccc5e6440d4e8e81d9939649e930fb07eaa5ccbb2b30660",
       "transit": "internal"
     },
     "governance": {
